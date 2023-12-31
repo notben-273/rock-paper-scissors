@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const playerChoice = 0
+
+        function getPlayerChoice() {
+            let playerChoice = prompt("Please choose: Rock, Paper, or Scissors.");
+
+            playerChoice = playerChoice.toLowerCase();
+
+            return playerChoice;
+        }
+
+        function getComputerChoice() {
+            let choices = ["rock", "paper", "scissors"];
+            let computerChoice = choices[Math.floor(Math.random() * 3)];
+
+            return computerChoice;
+        }
+
+        function playGame(playerChoice, computerChoice) {
+            if (playerChoice === computerChoice) {
+                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nIt's a tie...");
+            } else if (playerChoice === "rock" && computerChoice === "scissors") {
+                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nYou Win!");
+            } else if (playerChoice === "scissors" && computerChoice === "paper") {
+                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nYou Win!");
+            } else if (playerChoice === "paper" && computerChoice === "rock") {
+                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nYou Win!");
+            } else {
+                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nYou Lose :(");
+            }
+        }
+
+        playGame(getPlayerChoice(), getComputerChoice());
+        playGame(getPlayerChoice(), getComputerChoice());
+        playGame(getPlayerChoice(), getComputerChoice());
+        playGame(getPlayerChoice(), getComputerChoice());
+        playGame(getPlayerChoice(), getComputerChoice());
+    </script>
+</body>
+</html>
