@@ -1,48 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js-file.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <script>
-        const playerChoice = 0
-
-        function getPlayerChoice() {
-            let playerChoice = prompt("Please choose: Rock, Paper, or Scissors.");
-
-            playerChoice = playerChoice.toLowerCase();
-
-            return playerChoice;
-        }
-
-        function getComputerChoice() {
-            let choices = ["rock", "paper", "scissors"];
-            let computerChoice = choices[Math.floor(Math.random() * 3)];
-
-            return computerChoice;
-        }
-
-        function playGame(playerChoice, computerChoice) {
-            if (playerChoice === computerChoice) {
-                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nIt's a tie...");
-            } else if (playerChoice === "rock" && computerChoice === "scissors") {
-                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nYou Win!");
-            } else if (playerChoice === "scissors" && computerChoice === "paper") {
-                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nYou Win!");
-            } else if (playerChoice === "paper" && computerChoice === "rock") {
-                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nYou Win!");
-            } else {
-                console.log("You chose " + playerChoice + "\nComputer chose " + computerChoice + "\nYou Lose :(");
-            }
-        }
-
-        playGame(getPlayerChoice(), getComputerChoice());
-        playGame(getPlayerChoice(), getComputerChoice());
-        playGame(getPlayerChoice(), getComputerChoice());
-        playGame(getPlayerChoice(), getComputerChoice());
-        playGame(getPlayerChoice(), getComputerChoice());
-    </script>
+    <h1 id="game-winner"></h1>
+    <div id="score">Score: 0 - 0</div>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <div id="player"></div>
+    <div id="computer"></div>
+    <div id="result"></div>
 </body>
 </html>
